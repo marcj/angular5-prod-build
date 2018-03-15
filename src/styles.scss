@@ -1,0 +1,261 @@
+/* You can add global styles to this file, and also import other style files */
+//@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+$fa-font-path: '../node_modules/font-awesome/fonts';
+
+@import '../node_modules/font-awesome/scss/font-awesome';
+//@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://www.google.com/design/spec/style/color.html
+$candy-app-primary: mat-palette($mat-cyan);
+$candy-app-accent:  mat-palette($mat-blue, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
+
+body, html {
+  background-color: #f6f6f6;
+  padding: 0;
+  margin: 0;
+
+  //font-family: 'Roboto', sans-serif;
+  //font-size: 13px;
+  font: 400 13px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  //color: #b2dfe8;
+}
+
+
+h1, h2, h3, h4, strong {
+  font-weight: 500;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+[mat-icon-button] {
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+button .mat-progress-spinner {
+  display: inline-block;
+}
+
+textarea {
+  height: 50px;
+}
+
+table.no-spacing {
+  border-spacing: 0;
+  border-collapse: separate;
+  table-layout: fixed;
+
+  td {
+    vertical-align: top;
+    padding: 0;
+  }
+}
+
+fa.button {
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
+
+button.button-color-chooser {
+  width: 34px;
+  height: 20px;
+  padding: 0;
+  border: 3px solid #eee;
+  box-shadow: 0 0 1px #767676;
+  border-radius: 3px;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    border: 3px solid #c1c1c1;
+  }
+
+  &[disabled] {
+    border: 3px solid #eee;
+    background-color: #eee !important;
+  }
+}
+
+.flex {
+  display: flex;
+
+  > * {
+    flex: 1;
+  }
+}
+
+.form-widget-row {
+  display: flex;
+
+  > div {
+    text-align: center;
+    padding: 2px;
+    flex: 1;
+
+    > .label {
+      font-size: 11px;
+      line-height: 14px;
+      text-align: center;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+    }
+  }
+  > div:first-child {
+    text-align: left;
+  }
+
+  .form-widget-row > div {
+    padding: 0;
+  }
+}
+
+div.inspector {
+  div.row {
+    padding: 1px 10px;
+  }
+
+  h3.solid-header {
+    margin-bottom: 5px;
+  }
+
+  div.row > .form-widget-row > div:first-child {
+    flex: 0 0 90px;
+  }
+}
+
+h3.solid-header {
+  background-color: #f3f3f3;
+  border: 1px solid #b8b8b8;
+  border-left: 0;
+  border-right: 0;
+  height: 27px;
+  padding: 0 11px;
+  font-size: 13px;
+  font-weight: 300;
+  color: #111;
+  line-height: 25px;
+  margin: 3px 0;
+
+  &.header {
+    margin-top: 0;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.form-widget-addition {
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //
+  //> * {
+  //  text-align: center;
+  //  flex: 1;
+  //}
+
+  position: relative;
+
+  input {
+    display: block;
+    width: 100%;
+    padding-right: 10px;
+  }
+
+  > .addition {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    //background-color: #eeeeee;
+    //border: 1px solid #ebebeb;
+    //border-left: 0;
+    width: 13px;
+    //flex: 0;
+    font-size: 11px;
+  }
+}
+
+.mat-slider-horizontal.small {
+  height: 20px;
+
+  .mat-slider-wrapper {
+    top: 9px;
+  }
+}
+
+.icon-buttons {
+  fa {
+    padding: 3px;
+  }
+
+  fa:hover {
+    cursor: pointer;
+    background-color: #eee;
+  }
+}
+
+fa {
+  font-size: 14px;
+}
+
+.mat-button-toggle-group.small {
+  .mat-button-toggle-label-content {
+    padding: 0 10px;
+    line-height: 26px;
+  }
+}
+
+.mat-button-toggle-group, .mat-button-toggle-standalone {
+  box-shadow: none !important;
+  border: 1px solid silver;
+}
